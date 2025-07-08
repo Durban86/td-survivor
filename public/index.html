@@ -1,0 +1,36 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Touchdown or Touch Out</title>
+<link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+<header>
+<div class="logo">TD or TO</div>
+<nav class="nav-menu">
+<a href="index.html">Home</a>
+<a href="pick.html">Make a Pick</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="rules.html">Rules</a>
+<a href="login.html">Login</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<section class="hero">
+<h1>One Touch, No Doubt.</h1>
+<p>Survive the week by picking one NFL player to score a rushing or receiving touchdown. No passing allowed.</p>
+<a href="pick.html" class="cta-button">Make Your Pick</a>
+</section>
+
+<section class="countdown">
+<h2>Next Kickoff Starts In:</h2>
+<p id="countdownTimer">Loading...</p>
+</section>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>

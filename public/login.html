@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Login – Touchdown or Touch Out</title>
+<link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+<header>
+<div class="logo">TD or TO</div>
+</header>
+
+<main class="form-section">
+<h2>Login</h2>
+<form id="loginForm">
+<label for="email">Email:</label>
+<input type="email" id="email" required />
+<label for="password">Password:</label>
+<input type="password" id="password" required />
+<button type="submit" class="cta-button">Sign In</button>
+</form>
+<button id="googleLogin" class="cta-button">Sign in with Google</button>
+<p id="loginError" style="color:red;"></p>
+<p><a href="reset.html">Forgot Password?</a></p>
+<p>New here? <a href="register.html">Create an account</a></p>
+</main>
+
+<script type="module" src="scripts/login.js"></script>
+</body>
+</html>

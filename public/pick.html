@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Make a Pick</title>
+<link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+<header>
+<div class="logo">TD or TO</div>
+<nav class="nav-menu">
+<a href="index.html">Home</a>
+<a href="pick.html">Make a Pick</a>
+<a href="leaderboard.html">Leaderboard</a>
+<a href="rules.html">Rules</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<main class="form-section">
+<h2>Week X Pick Submission</h2>
+<form id="pickForm">
+<label for="player">Player Name:</label>
+<input type="text" id="player" name="player" required />
+<label for="team">Team:</label>
+<input type="text" id="team" name="team" required />
+<button type="submit" class="cta-button">Submit Pick</button>
+</form>
+<div id="confirmationMessage"></div>
+</main>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/pick.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Register – Touchdown or Touch Out</title>
+<link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+<main class="form-section">
+<h2>Create Account</h2>
+<form id="registerForm">
+<input type="email" id="regEmail" placeholder="Email" required />
+<input type="password" id="regPassword" placeholder="Password" required />
+<button type="submit" class="cta-button">Register</button>
+</form>
+<p id="registerError" style="color:red;"></p>
+<p>Already have an account? <a href="login.html">Login</a></p>
+</main>
+
+<script type="module">
+import { auth, db } from './src/firebaseConfig.js';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+e.preventDefault();
+try {
+const email = document.getElementById("regEmail").value;
+const password = document.getElementById("regPassword").value;
+const userCred = await createUserWithEmailAndPassword(auth, email, password);
+await setDoc(doc(db, "users", userCred.user.uid), {
+uid: userCred.user.uid,
+name: email.split("@")[0],
+usedPlayers: [],
+status: "alive",
+streak: 0
+});
+window.location.href = "pick.html";
+} catch (error) {
+document.getElementById("registerError").textContent = "Registration failed.";
+}
+});
+</script>
+</body>
+</html>
